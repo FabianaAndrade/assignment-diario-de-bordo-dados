@@ -95,8 +95,8 @@ docker-compose down
 ```
 5. Execucao de testes unitarios
 ```text
-docker build -f Dockerfile.tests -t tests_pipeline .
-docker run --rm tests_pipeline
+docker-compose build test-runner
+docker-compose run --rm test-runner
 ```
 
 
