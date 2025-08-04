@@ -26,3 +26,4 @@ class Writter:
         except Exception as e:
             self.logger.error(f"Erro ao escrever o arquivo Parquet na camada {layer}: {e}")
             raise e
+            
