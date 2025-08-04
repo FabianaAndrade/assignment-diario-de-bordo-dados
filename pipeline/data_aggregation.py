@@ -48,7 +48,8 @@ class DataAggregation:
 
             df_gold = df_silver.groupBy("DT_REFE").agg(*agg_rules)
             self.logger.info("Agregação de dados concluída com sucesso.")
+            return df_gold
         except Exception as e:
             self.logger.error(f"Erro ao agregar os dados: {e}")
             raise e
-        return df_gold
+    
