@@ -6,6 +6,8 @@ A base de dados é sobre corridas em aplicativos de transporte. O arquivo fonte 
 acabou, categoria da viagem (pessoal ou negocio), local de embarque do passageiro, local de desembarque, proposito da viagem  (Reunião ou não) e distância percorrida.
 
 Dessa forma, foi construido um pipeline de dados em spark que cobre aspectos desde a captura do arquivo fonte (csv) até a criação da camada gold. O processo foi desenvolvido em linguagem python e implementado com docker para rodar isolado com serviço em um conteiner. 
+<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/9a54be6c-5fda-4297-a9de-fb4be9ea475a" />
+
 
 ## Arquitetura Macro
 <img width="1672" height="559" alt="Sem título-2025-07-02-2113(2)" src="https://github.com/user-attachments/assets/8db9d784-6544-4c6a-91d4-5210e8ec92d4" />
