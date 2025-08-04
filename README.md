@@ -20,3 +20,40 @@ camada gold: tabela que agrega, conforme a regra de negócio, as inforamações 
 
 notebooks python: utilizados para entender os dados fonte do csv e visualizar os resultados gravados na camada gold.
 
+`
+/app
+│
+├── data/
+│   ├── inputs/
+|       └── info_transportes.csv    # arquivo origem
+│   └── outputs/                    # resultados persisitidos (parquet) por camada
+|       ├── raw/
+|       ├── silver/
+|       └── gold/
+│ 
+├── pipeline/
+│   ├── __init__.py
+│   ├── data_aggregation.py         # consolidacao da base gold
+|   ├── data_reading.py             # leituras csv e parquet
+|   ├── data_transformation.py      # transformacoes nos dados
+|   └── writter.py                  # persistencias nas camadas
+│
+│
+├── utils/
+│   ├── __init__.py
+│   ├── Logger.py                   # Classe utilitária para logging
+│ 
+├── tests/
+│   ├── __init__.py
+|   ├── test_aggregation.py         # teste na logica de agregacao
+|   ├── test_reader.py              # teste na logica de leitura
+    ├── test_tranformer.py          # teste na logica de transformacao
+│   └── conftest.py                 # configs testes unitarios
+│
+├── main.py                         # Executor
+│
+├── requirements.txt                # modulos requeridos
+├── Dockerfile.tests                # Dockerfile com as definicoes para o ambiente de teste
+├── Dockerfile                      # Dockerfile para o app
+└── docker-compose.yml              # Orquestração dos serviços com Docker
+
