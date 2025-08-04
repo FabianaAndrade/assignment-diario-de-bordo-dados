@@ -12,3 +12,13 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     command: python3 main.py
+  test-runner:
+    build:
+      context: .
+    container_name: spark_pipeline_tests
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app
+    command: pytest tests/
