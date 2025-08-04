@@ -20,7 +20,7 @@ camada gold: tabela que agrega, conforme a regra de negócio, as inforamações 
 
 notebooks python: utilizados para entender os dados fonte do csv e visualizar os resultados gravados na camada gold.
 
-`
+` 
 /app
 │
 ├── data/
