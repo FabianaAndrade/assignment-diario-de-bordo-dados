@@ -28,14 +28,22 @@ class DataAggregation:
                          """)
         try:
             agg_rules = [
-            f.count("*").alias("QT_CORR"),
-            f.count(f.when(f.col("CATEGORIA") == "Negocio", True)).alias("QT_CORR_NEG"),
-            f.count(f.when(f.col("CATEGORIA") == "PESSOAL", True)).alias("QT_CORR_PESS"),
-            f.round(f.max("DISTANCIA"), 1).alias("VL_MAX_DIST"),
-            f.round(f.min("DISTANCIA"), 1).alias("VL_MIN_DIST"),
-            f.round(f.avg("DISTANCIA"), 1).alias("VL_MED_DIST"),
-            f.count(f.when(f.col("PROPOSITO") == "Reunião", True)).alias("QT_CORR_REUNI"),
-            f.count(f.when(f.col("PROPOSITO") != "Reunião", True)).alias("QT_CORR_NAO_REUNI")
+                f.count("*").alias("QT_CORR"),
+                f.count(
+                    f.when(f.lower(f.col("CATEGORIA")) == "negocio", True)
+                ).alias("QT_CORR_NEG"),
+                f.count(
+                    f.when(f.lower(f.col("CATEGORIA")) == "pessoal", True)
+                ).alias("QT_CORR_PESS"),
+                f.round(f.max("DISTANCIA"), 1).alias("VL_MAX_DIST"),
+                f.round(f.min("DISTANCIA"), 1).alias("VL_MIN_DIST"),
+                f.round(f.avg("DISTANCIA"), 1).alias("VL_AVG_DIST"),
+                f.count(
+                    f.when(f.lower(f.col("PROPOSITO")) == "reunião", True)
+                ).alias("QT_CORR_REUNI"),
+                f.count(
+                    f.when(f.lower(f.col("PROPOSITO")) != "reunião", True)
+                ).alias("QT_CORR_NAO_REUNI")
             ]
 
             df_gold = df_silver.groupBy("DT_REFE").agg(*agg_rules)
