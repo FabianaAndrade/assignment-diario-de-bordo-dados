@@ -27,10 +27,11 @@ class DataTransformation:
                     'MM-dd-yyyy H:mm'), 
                     'yyyy-MM-dd')
                 )
+            return df
         except Exception as e:
             print(f"Erro ao formatar a coluna de data de referencia: {e}")
             raise e
-        return df
+        
     
     def change_data_type(self, df: DataFrame, column_name: str, new_data_type: str) -> DataFrame:
         """
@@ -44,10 +45,11 @@ class DataTransformation:
         self.logger.info(f"Alterando o tipo de dado da coluna '{column_name}' para '{new_data_type}'.")
         try:
             df = df.withColumn(column_name, f.col(column_name).cast(new_data_type))
+            return df
         except Exception as e:
             self.logger.error(f"Erro ao alterar o tipo de dado da coluna '{column_name}': {e}")
             raise e
-        return df
+        
     
     def replace_missing_values(self, df: DataFrame, columns_names: list, value: str = 'não_registrado') -> DataFrame:
         """
