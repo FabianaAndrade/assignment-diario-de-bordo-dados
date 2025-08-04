@@ -41,7 +41,7 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 │
 ├── utils/
 │   ├── __init__.py
-│   ├── Logger.py                   # Classe utilitária para logging
+│   └──  Logger.py                   # Classe utilitária para logging
 │ 
 ├── tests/
 │   ├── __init__.py
@@ -51,6 +51,10 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 │   └── conftest.py                 # configs testes unitarios
 │
 ├── main.py                         # Executor
+|
+├── exploration/
+│   ├── data_exploration_csv.ipynb   # analise incial dos dados origem
+│   └── data_exploration_gold.ipynb  # visualizacao dos resultados da camada gold
 │
 ├── requirements.txt                # modulos requeridos
 ├── Dockerfile.tests                # Dockerfile com as definicoes para o ambiente de teste
