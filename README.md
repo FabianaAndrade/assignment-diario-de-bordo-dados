@@ -56,4 +56,5 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 ├── Dockerfile.tests                # Dockerfile com as definicoes para o ambiente de teste
 ├── Dockerfile                      # Dockerfile para o app
 └── docker-compose.yml              # Orquestração dos serviços com Docker
+```
 
