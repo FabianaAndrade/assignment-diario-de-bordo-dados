@@ -8,7 +8,7 @@ acabou, categoria da viagem (pessoal ou negocio), local de embarque do passageir
 Dessa forma, foi construido um pipeline de dados em spark que cobre aspectos desde a captura do arquivo fonte (csv) até a criação da camada gold. O processo foi desenvolvido em linguagem python e implementado com docker para rodar isolado com serviço em um conteiner. 
 
 ## Arquitetura Macro
-<img width="1672" height="559" alt="Sem título-2025-07-02-2113(1)" src="https://github.com/user-attachments/assets/646e4c4d-2dcf-4256-a3d2-14b14a926970" />
+<img width="1672" height="559" alt="Sem título-2025-07-02-2113(2)" src="https://github.com/user-attachments/assets/8db9d784-6544-4c6a-91d4-5210e8ec92d4" />
 
 Arquivo origem: conjunto de dados com as informações fonte
 
