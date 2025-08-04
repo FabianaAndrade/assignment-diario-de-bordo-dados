@@ -25,10 +25,11 @@ class DataReading:
             full_path_csv = os.path.join(source_folder, csv_files[0])
             df_csv = self.spark.read.csv(full_path_csv, header=True, inferSchema=True, sep = sep)
             self.logger.info(f"Arquivo CSV lido com sucesso: {full_path_csv}")
+            return df_csv
         except Exception as e:
             self.logger.error(f"Erro ao ler o arquivo CSV: {e}")
             raise e
-        return df_csv
+        
     
     def read_parquet_file(self, layer: str, source_folder: str) -> DataFrame:
         """
@@ -43,7 +44,8 @@ class DataReading:
         try:
             df_parquet = self.spark.read.parquet(folder_name)
             self.logger.info(f"Arquivos Parquet lidos com sucesso da camada: {layer}")
+            return df_parquet
         except Exception as e:
             self.logger.error(f"Erro ao ler o arquivo Parquet: {e}")
             raise e
-        return df_parquet
+        
