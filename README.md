@@ -61,4 +61,42 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 ├── Dockerfile                      # Dockerfile para o app
 └── docker-compose.yml              # Orquestração dos serviços com Docker
 ```
+# Utilização
+
+Tenha previamente instalado:
+```text
+Docker e Docker-compose
+```
+
+1. Clone o repo
+```text
+ git clone https://github.com/FabianaAndrade/assignment-monitoramento-elevator-sensor-iot.git
+```
+2. Defina as váriaveis de ambientes
+Crie um arquivo .env na raiz do projeto com os valores das variaveis
+
+```text
+SOURCE_DATA_FOLDER =  # caminho dos arquivo csv fonte
+TARGET_DATA_FOLDER =  # nome da pasta onde os dados serao persistidos
+CSV_SEP =             # tipo de separador do csv
+COLUMN_DAT_REF =      # nome da coluna base para considerar dat ref
+PART_COLUMN_NAME =    # nome para a coluna dat ref
+
+```
+Caso não sejam definidas serão assumidos valores defaults
+
+3. Inicie os containers
+```text
+docker-compose up --build 
+```
+4. Desligando os serviços
+```text
+docker-compose down
+```
+5. Execucao de testes unitarios
+```text
+docker build -f Dockerfile.tests -t tests_pipeline .
+docker run --rm tests_pipeline
+```
+
 
