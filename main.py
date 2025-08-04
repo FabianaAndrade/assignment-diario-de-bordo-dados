@@ -71,8 +71,7 @@ if __name__ == "__main__":
     load_dotenv()
     
     spark = SparkSession.builder \
-        .appName("pipe_corridas_aplicativo") \
-        .config("spark.sql.warehouse.dir", "file:///tmp/spark-warehouse") \
+        .appName("pipe_diario_de_bordo") \
         .getOrCreate()
 
     main(
