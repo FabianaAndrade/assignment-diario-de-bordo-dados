@@ -36,7 +36,7 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 │   ├── data_aggregation.py         # consolidacao da base gold
 |   ├── data_reading.py             # leituras csv e parquet
 |   ├── data_transformation.py      # transformacoes nos dados
-|   └── writter.py                  # persistencias nas camadas
+|   └── writer.py                  # persistencias nas camadas
 │
 │
 ├── utils/
@@ -45,10 +45,7 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 │ 
 ├── tests/
 │   ├── __init__.py
-|   ├── test_aggregation.py         # teste na logica de agregacao
-|   ├── test_reader.py              # teste na logica de leitura
-    ├── test_tranformer.py          # teste na logica de transformacao
-│   └── conftest.py                 # configs testes unitarios
+│   └── test_pipeline.py            # testes unitarios
 │
 ├── main.py                         # Executor
 |
@@ -57,7 +54,6 @@ notebooks python: utilizados para entender os dados fonte do csv e visualizar os
 │   └── data_exploration_gold.ipynb  # visualizacao dos resultados da camada gold
 │
 ├── requirements.txt                # modulos requeridos
-├── Dockerfile.tests                # Dockerfile com as definicoes para o ambiente de teste
 ├── Dockerfile                      # Dockerfile para o app
 └── docker-compose.yml              # Orquestração dos serviços com Docker
 ```
