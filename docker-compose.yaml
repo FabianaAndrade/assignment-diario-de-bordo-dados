@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  spark-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pipe_diario_de_bordo
+    volumes:
+      - ./data:/app/data          
+      - ./.env:/app/.env:ro       
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python3 main.py
